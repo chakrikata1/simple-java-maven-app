@@ -7,7 +7,16 @@ pipeline {
   stages {
     stage ("Demo"){
      steps{
-      echo "MyBoolean is : ${params.MyBoolean}"
+      script {
+       if(params.MyBoolean == false){
+        currentBuild.result = "SUCCESS"
+        return
+       }
+       else {
+        echo "MyBoolean is : ${params.MyBoolean}"
+       }
+      }
+      
      }
     }
   }  
