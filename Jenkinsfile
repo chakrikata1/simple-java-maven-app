@@ -19,5 +19,14 @@ pipeline {
       
      }
     }
+   stage ("Functions"){
+    steps {
+      myFunc("Hello from the functions stage!")
+    }
+   }
   }  
+}
+
+def myFunc(String myText){
+ echo "myText is set to: ${myText}"
 }
