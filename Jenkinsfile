@@ -6,7 +6,9 @@ pipeline {
   }  
   stages {
     stage ("Demo"){
+     steps{
       echo "MyBoolean is : ${params.MyBoolean}"
+     }
     }
   }  
 }
